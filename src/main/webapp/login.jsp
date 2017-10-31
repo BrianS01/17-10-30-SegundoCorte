@@ -22,23 +22,26 @@
     <body>
         <div class="container">
             <div class="top">
-                <h1 id="title" class="hidden"><span id="logo">Daily <span>UI</span></span></h1>
+                <h1 id="title" class="hidden"><span id="logo">VLC <span>LTDA!</span></span></h1>
             </div>
             <div class="login-box animated fadeInUp">
                 <div class="box-header">
-                    <h2>Log In</h2>
+                    <h2>ENTRAR</h2>
                 </div>
-                <label for="username">Username</label>
+                <label for="username">Nombre</label>
                 <br/>
                 <input type="text" id="username">
                 <br/>
-                <label for="password">Password</label>
+                <label for="password">Contraseña</label>
                 <br/>
                 <input type="password" id="password">
                 <br/>
-                <button type="submit">Sign In</button>
+                <button type="submit">INGRESAR</button>
                 <br/>
-                <a href="#"><p class="small">Forgot your password?</p></a>
+                <a href="#">
+                    <p class="small">Olvido su contraseña</p>
+                    <p class="small">Contacte al administrador del servicio</p>
+                </a>
             </div>
         </div>
     </body>

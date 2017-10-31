@@ -12,23 +12,20 @@ package modelo;
 
 import java.util.*;
 
-/**
- *
- * @author Mario-Bx
- */
-public class FacturaJc {
-
+public class Factura
+{
     private int idFacturaProducto;
     private int numeroFactura;
     private String fechaFactura;
     private int totalFactura;
     private int iDFkEmpleado;
-    ArrayList<ProductoJc> listaProductos = new ArrayList<ProductoJc>();
+    ArrayList<Producto> listaProductos = new ArrayList<Producto>();
 
-    public FacturaJc() {
-    }
+    public Factura()
+    {}
 
-    public FacturaJc(int idFacturaProducto, int numeroFactura, String fechaFactura, int totalFactura, int iDFkEmpleado) {
+    public Factura(int idFacturaProducto, int numeroFactura, String fechaFactura, int totalFactura, int iDFkEmpleado)
+    {
         this.idFacturaProducto = idFacturaProducto;
         this.numeroFactura = numeroFactura;
         this.fechaFactura = fechaFactura;
@@ -76,11 +73,11 @@ public class FacturaJc {
         this.iDFkEmpleado = iDFkEmpleado;
     }
 
-    public ArrayList<ProductoJc> getListaProductos() {
+    public ArrayList<Producto> getListaProductos() {
         return listaProductos;
     }
 
-    public void setListaProductos(ArrayList<ProductoJc> listaProductos) {
+    public void setListaProductos(ArrayList<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
 
@@ -88,5 +85,4 @@ public class FacturaJc {
     public String toString() {
         return "FacturaJc{" + "idFacturaProducto=" + idFacturaProducto + ", numeroFactura=" + numeroFactura + ", fechaFactura=" + fechaFactura + ", totalFactura=" + totalFactura + ", iDFkEmpleado=" + iDFkEmpleado + ", listaProductos=" + listaProductos + '}';
     }
-
 }

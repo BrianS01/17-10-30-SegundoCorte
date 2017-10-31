@@ -10,21 +10,18 @@
 
 package modelo;
 
-/**
- *
- * @author Mario-Bx
- */
-public class MedidasJc {
-
+public class Medidas
+{
     private int Ancho;
     private int Alto;
     private int Grosor;
     private int Cantidad;
 
-    public MedidasJc() {
-    }
+    public Medidas()
+    {}
 
-    public MedidasJc(int Ancho, int Alto, int Grosor, int Cantidad) {
+    public Medidas(int Ancho, int Alto, int Grosor, int Cantidad)
+    {
         this.Ancho = Ancho;
         this.Alto = Alto;
         this.Grosor = Grosor;
@@ -64,8 +61,8 @@ public class MedidasJc {
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "MedidasJc{" + "Ancho=" + Ancho + ", Alto=" + Alto + ", Grosor=" + Grosor + ", Cantidad=" + Cantidad + '}';
     }
-
 }

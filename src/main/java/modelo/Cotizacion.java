@@ -12,15 +12,14 @@ package modelo;
 
 import java.util.*;
 
-public class Cotizacion extends MedidasJc
+public class Cotizacion extends Medidas
 {
-
     private int iDCotizacion;
     private int numeroCotizacion;
     private Date fechaCotizacion;
     private int precioCotizacion;
     private int idFKCliente;
-    ArrayList<ProductoJc> listaProductos = new ArrayList<ProductoJc>();
+    ArrayList<Producto> listaProductos = new ArrayList<Producto>();
 
     public Cotizacion()
     {}

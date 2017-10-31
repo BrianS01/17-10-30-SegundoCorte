@@ -12,21 +12,18 @@ package modelo;
 
 import java.util.*;
 
-/**
- *
- * @author Mario-Bx
- */
-public class ClienteJc extends PersonaJc {
-
+public class Cliente extends Persona
+{
     private int idCliente;
     private int nivelCliente;
     private int totalComprasCliente;
-    ArrayList<CotizacionJc> listaCotizaciones = new ArrayList<CotizacionJc>();
+    ArrayList<Cotizacion> listaCotizaciones = new ArrayList<Cotizacion>();
 
-    public ClienteJc() {
-    }
+    public Cliente()
+    {}
 
-    public ClienteJc(int idCliente, int cedula, String nombre, String Apellido, int nivelCliente, int totalComprasCliente) {
+    public Cliente(int idCliente, int cedula, String nombre, String Apellido, int nivelCliente, int totalComprasCliente)
+    {
         super(cedula, nombre, Apellido);
         this.idCliente = idCliente;
         this.nivelCliente = nivelCliente;
@@ -57,16 +54,17 @@ public class ClienteJc extends PersonaJc {
         this.totalComprasCliente = totalCompras;
     }
 
-    public ArrayList<CotizacionJc> getListacotizaciones() {
+    public ArrayList<Cotizacion> getListacotizaciones() {
         return listaCotizaciones;
     }
 
-    public void setListacotizaciones(ArrayList<CotizacionJc> listacotizaciones) {
+    public void setListacotizaciones(ArrayList<Cotizacion> listacotizaciones) {
         this.listaCotizaciones = listacotizaciones;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "ClienteJc{" + "idCliente=" + idCliente + ", nivelCliente=" + nivelCliente + ", totalComprasCliente=" + totalComprasCliente + ", listaCotizaciones=" + listaCotizaciones + '}';
     }
 }

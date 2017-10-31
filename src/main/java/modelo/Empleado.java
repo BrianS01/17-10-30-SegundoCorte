@@ -12,20 +12,17 @@ package modelo;
 
 import java.util.*;
 
-/**
- *
- * @author Mario-Bx
- */
-public class EmpleadoJc extends PersonaJc {
-
+public class Empleado extends Persona
+{
     private int idEmpleado;
     private String tipoEmpleado;
-    ArrayList<FacturaJc> listaFacturas = new ArrayList<FacturaJc>();
+    ArrayList<Factura> listaFacturas = new ArrayList<Factura>();
 
-    public EmpleadoJc() {
-    }
+    public Empleado()
+    {}
 
-    public EmpleadoJc(int idEmpleado, String tipoEmpleado, int cedula, String nombre, String Apellido) {
+    public Empleado(int idEmpleado, String tipoEmpleado, int cedula, String nombre, String Apellido)
+    {
         super(cedula, nombre, Apellido);
         this.idEmpleado = idEmpleado;
         this.tipoEmpleado = tipoEmpleado;
@@ -47,17 +44,17 @@ public class EmpleadoJc extends PersonaJc {
         this.tipoEmpleado = tipoEmpleado;
     }
 
-    public ArrayList<FacturaJc> getListaFacturas() {
+    public ArrayList<Factura> getListaFacturas() {
         return listaFacturas;
     }
 
-    public void setListaFacturas(ArrayList<FacturaJc> listaFacturas) {
+    public void setListaFacturas(ArrayList<Factura> listaFacturas) {
         this.listaFacturas = listaFacturas;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "EmpleadoJc{" + "idEmpleado=" + idEmpleado + ", tipoEmpleado=" + tipoEmpleado + ", listaFacturas=" + listaFacturas + '}';
     }
-
 }

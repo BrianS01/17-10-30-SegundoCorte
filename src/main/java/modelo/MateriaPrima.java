@@ -10,18 +10,15 @@
 
 package modelo;
 
-/**
- *
- * @author Mario-Bx
- */
-public class MateriaPrimaJc extends MedidasJc {
-
+public class MateriaPrima extends Medidas
+{
     private int idMateriaP;
+    
+    public MateriaPrima()
+    {}
 
-    public MateriaPrimaJc() {
-    }
-
-    public MateriaPrimaJc(int idMateriaP, int Ancho, int Alto, int Grosor, int Cantidad) {
+    public MateriaPrima(int idMateriaP, int Ancho, int Alto, int Grosor, int Cantidad)
+    {
         super(Ancho, Alto, Grosor, Cantidad);
         this.idMateriaP = idMateriaP;
     }

@@ -1,8 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *  PROYECTO SEGUNDO CORTE
+ *   co-Author :::   Juan Albarracin
+ *   co-Author :::  Mario Bolaños
+ *   co-Author ::: Sergio Orozco
+ *   co-Author :::  Brian Sterling
+ *     Program ::: Bases de Datos
+ *  Credential ::: SIST0008-G01:SIV
  */
+
 package conexion;
 
 import java.io.IOException;
@@ -45,10 +50,13 @@ public class Connection extends HttpServlet
             pst.setString(1, user);
             pst.setString(2, pass);
             ResultSet rs = pst.executeQuery();
-            if (rs.next()) {
+            
+            if (rs.next())
+            {
                 out.println("Correct login credentials");
             } 
-            else {
+            else
+            {
                 out.println("Incorrect login credentials");
             } 
         }

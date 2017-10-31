@@ -20,6 +20,14 @@
         <title>VLC Ltda!</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div id='cssmenu'>
+            <ul>
+                <li class='active'><a href='inicio.jsp'><span>Inicio</span></a></li>
+                <li><a href='vistaCliente.jsp'><span>Clientes</span></a></li>
+                <li><a href='vistaEmpleado.jsp'><span>Empleados</span></a></li>
+                <li><a href='vistaCotizacion.jsp'><span>Cotizacion</span></a></li>
+                <li class='last'><a href='vistaFactura.jsp'><span>Factura</span></a></li>
+            </ul>
+        </div>
     </body>
 </html>

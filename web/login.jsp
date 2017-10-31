@@ -22,6 +22,7 @@
     <body>
         <div class="container">
             <div class="top">
+                <h4>Usuario: fabian | Contraseña: bases</h4>
                 <h1 id="title" class="hidden"><span id="logo">VLC <span>LTDA!</span></span></h1>
             </div>
             <div class="login-box animated fadeInUp">
@@ -42,9 +43,9 @@
                     function check(form)/*function to check userid & password*/
                     {
                         /*the following code checkes whether the entered userid and password are matching*/
-                        if (form.userid.value === "facil" && form.pswrd.value === "facil")
+                        if (form.userid.value === "fabian" && form.pswrd.value === "bases")
                         {
-                            window.open('vistaCliente.jsp');/*opens the target page while Id & password matches*/
+                            window.open('inicio.jsp');/*opens the target page while Id & password matches*/
                         }
                         else
                         {
@@ -58,6 +59,5 @@
                 </a>
             </div>
         </div>
-
     </body>
 </html>

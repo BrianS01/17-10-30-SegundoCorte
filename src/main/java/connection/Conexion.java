@@ -12,6 +12,10 @@ package connection;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,8 +48,8 @@ public class Conexion extends HttpServlet
         try (PrintWriter out = response.getWriter())
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sesion", "root", "");
-            PreparedStatement pst = conn.prepareStatement("Select user,pass from login where user=? and pass=?");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sesion", "root", "root");
+            PreparedStatement pst = conn.prepareStatement("Select user,pass from login where nombre=? and clave=?");
             pst.setString(1, user);
             pst.setString(2, pass);
             ResultSet rs = pst.executeQuery();

@@ -12,20 +12,39 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="shortcut icon" href="images/VLCicono.ico">
-        <link rel="stylesheet"  href="estructura.css" type="text/css" media="screen">
-        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-        <title>VLC Ltda!</title>
+        <title>Daily UI - Day 1 Sign In</title>
+
+        <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="loginAnimate.css">
+        <!-- Custom Stylesheet -->
+        <link rel="stylesheet" href="styl.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     </head>
+
     <body>
-        <div id='cssmenu'>
-            <ul>
-                <li class='active'><a href='#'><span>Home</span></a></li>
-                <li><a href='#'><span>Products</span></a></li>
-                <li><a href='#'><span>Company</span></a></li>
-                <li class='last'><a href='#'><span>Contact</span></a></li>
-            </ul>
+        <div class="container">
+            <div class="top">
+                <h1 id="title" class="hidden"><span id="logo">Daily <span>UI</span></span></h1>
+            </div>
+            <div class="login-box animated fadeInUp">
+                <div class="box-header">
+                    <h2>Log In</h2>
+                </div>
+                <label for="username">Username</label>
+                <br/>
+                <input type="text" id="username">
+                <br/>
+                <label for="password">Password</label>
+                <br/>
+                <input type="password" id="password">
+                <br/>
+                <button type="submit">Sign In</button>
+                <br/>
+                <a href="#"><p class="small">Forgot your password?</p></a>
+            </div>
         </div>
     </body>
 </html>

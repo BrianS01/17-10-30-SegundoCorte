@@ -1,7 +1,7 @@
 package DAO;
 
-import Dato.ClienteJc;
-import Dato.ProductoJc;
+import modelo.Cliente;
+import modelo.Producto;
 import Servicios.DbUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,26 +15,27 @@ import java.util.List;
  *
  * @author Juan Albarracin
  */
-public class ProductoDao{
+public class ProductoDAO
+{
 
     private Connection connection;
 
-    public ProductoDao() {
+    public ProductoDAO() {
         connection = DbUtil.getConnection();
     }
 
-    public void addCliente(ProductoJc newclClienteJc) {
+    public void addCliente(Producto newclCliente) {
         try {
             /// sentencia para insertar en la tabla
             PreparedStatement preparedStatement = connection
                     .prepareStatement("insert into ProductoBD(Ancho,Alto,Precio,Cantidad,Id_CotizacionFK,Id_FacturaFK) values (?,?,?,?,?)");
             // parametros de inicio para agregar...
-            preparedStatement.setInt(1, newclClienteJc.getAncho());
-           preparedStatement.setInt(1, newclClienteJc.getAlto());
-            preparedStatement.setInt(1, newclClienteJc.getprecio());
-            preparedStatement.setInt(4, newclClienteJc.getCantidad());
-            preparedStatement.setInt(5, newclClienteJc.getIdFKCotizacion());
-            preparedStatement.setInt(1, newclClienteJc.getIdFKCotizacionFactuta());
+            preparedStatement.setInt(1, newclCliente.getAncho());
+           preparedStatement.setInt(1, newclCliente.getAlto());
+            preparedStatement.setInt(1, newclCliente.getprecio());
+            preparedStatement.setInt(4, newclCliente.getCantidad());
+            preparedStatement.setInt(5, newclCliente.getIdFKCotizacion());
+            preparedStatement.setInt(1, newclCliente.getIdFKCotizacionFactuta());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -56,16 +57,16 @@ public class ProductoDao{
         }
     }
 
-    public void updateCliente(ProductoJc newclClienteJc, int cs) {
+    public void updateCliente(Producto newclCliente, int cs) {
         try {
             /// sentencia para insertar en la tabla
             PreparedStatement preparedStatement = connection
                     .prepareStatement("update ProductoBD set ancho=?, alto=?, precio=?, cantidad=?, id_cotizacion=?, Id_FacturaFK where Id_producto=" + cs);
             // parametros de inicio para actualizar...
-            preparedStatement.setInt(1, newclClienteJc.getAlto());
-            preparedStatement.setInt(2, newclClienteJc.getAncho());
-            preparedStatement.setInt(3, newclClienteJc.getCantidad());
-            preparedStatement.setInt(4, newclClienteJc.getGrosor());
+            preparedStatement.setInt(1, newclCliente.getAlto());
+            preparedStatement.setInt(2, newclCliente.getAncho());
+            preparedStatement.setInt(3, newclCliente.getCantidad());
+            preparedStatement.setInt(4, newclCliente.getGrosor());
            
             preparedStatement.executeUpdate();
 
@@ -74,52 +75,55 @@ public class ProductoDao{
         }
     }
 
-    public List<ClienteJc> getAllClientes() {
-        List<ClienteJc> clientesListas = new ArrayList<ClienteJc>();
+    public List<Cliente> getAllClientes()
+    {
+        List<Cliente> clientesListas = new ArrayList<Cliente>();
         try {
             System.out.println("LLegue hasta aca");
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("select * from ClienteBD");
             while (rs.next()) {
-                ClienteJc newclClienteJc = new ClienteJc();
-                newclClienteJc.setClientID(rs.getInt("Id_Cliente"));
-                newclClienteJc.setCedula(rs.getInt("Cedula"));
-                newclClienteJc.setNombre(rs.getString("Nombre"));
-                newclClienteJc.setApellido(rs.getString("Apellido"));
-                newclClienteJc.setNivle(rs.getInt("Nivel"));
-                newclClienteJc.setTotalCompras(rs.getInt("Total_compras"));
+                Cliente newclCliente = new Cliente();
+                newclCliente.setClientID(rs.getInt("Id_Cliente"));
+                newclCliente.setCedula(rs.getInt("Cedula"));
+                newclCliente.setNombre(rs.getString("Nombre"));
+                newclCliente.setApellido(rs.getString("Apellido"));
+                newclCliente.setNivle(rs.getInt("Nivel"));
+                newclCliente.setTotalCompras(rs.getInt("Total_compras"));
 
-                clientesListas.add(newclClienteJc);
+                clientesListas.add(newclCliente);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return clientesListas;
     }
 
-    public ClienteJc getClienteById(int ClienteId) {
-        ClienteJc newclClienteJc = new ClienteJc();
-        try {
+    public Cliente getClienteById(int ClienteId)
+    {
+        Cliente newclCliente = new Cliente();
+        try
+        {
             PreparedStatement preparedStatement = connection.
                     prepareStatement("select * from ClienteBD where Id_Cliente=?");
             preparedStatement.setInt(1, ClienteId);
             ResultSet rs = preparedStatement.executeQuery();
 
-            if (rs.next()) {
-              //  newclClienteJc.setor(rs.getInt("Id_Producto"));
-                newclClienteJc.setCedula(rs.getInt("Cedula"));
-                newclClienteJc.setNombre(rs.getString("Nombre"));
-                newclClienteJc.setApellido(rs.getString("Apellido"));
-                newclClienteJc.setNivle(rs.getInt("Nivel"));
-                newclClienteJc.setTotalCompras(rs.getInt("Total_compras"));
+            if (rs.next())
+            {
+              //  newclCliente.setor(rs.getInt("Id_Producto"));
+                newclCliente.setCedula(rs.getInt("Cedula"));
+                newclCliente.setNombre(rs.getString("Nombre"));
+                newclCliente.setApellido(rs.getString("Apellido"));
+                newclCliente.setNivle(rs.getInt("Nivel"));
+                newclCliente.setTotalCompras(rs.getInt("Total_compras"));
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
-
-        return newclClienteJc;
+        return newclCliente;
     }
 }
-

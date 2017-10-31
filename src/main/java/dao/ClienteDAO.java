@@ -5,7 +5,7 @@
  */
 package DAO;
 
-import Dato.ClienteJc;
+import modelo.Cliente;
 import Servicios.DbUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,34 +19,39 @@ import java.util.List;
  *
  * @author Mario-Bx
  */
-public class ClienteDao {
+public class ClienteDAO
+{
 
     private Connection connection;
 
-    public ClienteDao() {
+    public ClienteDAO()
+    {
         connection = DbUtil.getConnection();
     }
 
-    public void addCliente(ClienteJc newclClienteJc) {
+    public void addCliente(Cliente newclCliente)
+    {
         try {
             /// sentencia para insertar en la tabla
             PreparedStatement preparedStatement = connection
                     .prepareStatement("insert into ClienteBD(Cedula,Nombre,Apellido,Nivel,Total_compras) values (?,?,?,?,?)");
             // parametros de inicio para agregar...
-            preparedStatement.setInt(1, newclClienteJc.getCedula());
-            preparedStatement.setString(2, newclClienteJc.getNombre());
-            preparedStatement.setString(3, newclClienteJc.getApellido());
-            preparedStatement.setInt(4, newclClienteJc.getNivle());
-            preparedStatement.setInt(5, newclClienteJc.getTotalCompras());
+            preparedStatement.setInt(1, newclCliente.getCedula());
+            preparedStatement.setString(2, newclCliente.getNombre());
+            preparedStatement.setString(3, newclCliente.getApellido());
+            preparedStatement.setInt(4, newclCliente.getNivle());
+            preparedStatement.setInt(5, newclCliente.getTotalCompras());
             preparedStatement.executeUpdate();
-
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
     }
 
-    public void deleteCliente(int clienteID) {
-        try {
+    public void deleteCliente(int clienteID)
+    {
+        try
+        {
             System.out.println("Entro a eliminar");
             PreparedStatement preparedStatement = connection
                     .prepareStatement("delete from ClienteBD where Id_Cliente=?");
@@ -59,17 +64,17 @@ public class ClienteDao {
         }
     }
 
-    public void updateCliente(ClienteJc newclClienteJc, int cs) {
+    public void updateCliente(Cliente newclCliente, int cs) {
         try {
             /// sentencia para insertar en la tabla
             PreparedStatement preparedStatement = connection
                     .prepareStatement("update ClienteBD set Cedula=?, Nombre=?, Apellido=?, Nivel=?, Total_compras=? where Id_Cliente=" + cs);
             // parametros de inicio para actualizar...
-            preparedStatement.setInt(1, newclClienteJc.getCedula());
-            preparedStatement.setString(2, newclClienteJc.getNombre());
-            preparedStatement.setString(3, newclClienteJc.getApellido());
-            preparedStatement.setInt(4, newclClienteJc.getNivle());
-            preparedStatement.setInt(5, newclClienteJc.getTotalCompras());
+            preparedStatement.setInt(1, newclCliente.getCedula());
+            preparedStatement.setString(2, newclCliente.getNombre());
+            preparedStatement.setString(3, newclCliente.getApellido());
+            preparedStatement.setInt(4, newclCliente.getNivle());
+            preparedStatement.setInt(5, newclCliente.getTotalCompras());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -77,23 +82,23 @@ public class ClienteDao {
         }
     }
 
-    public List<ClienteJc> getAllClientes() {
-        List<ClienteJc> clientesListas = new ArrayList<ClienteJc>();
+    public List<Client> getAllClientes() {
+        List<Cliente> clientesListas = new ArrayList<Cliente>();
         try {
             System.out.println("LLegue hasta aca");
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("select * from ClienteBD");
             while (rs.next()) {
-                ClienteJc newclClienteJc = new ClienteJc();
-                newclClienteJc.setClientID(rs.getInt("Id_Cliente"));
-                newclClienteJc.setCedula(rs.getInt("Cedula"));
-                newclClienteJc.setNombre(rs.getString("Nombre"));
-                newclClienteJc.setApellido(rs.getString("Apellido"));
-                newclClienteJc.setNivle(rs.getInt("Nivel"));
-                newclClienteJc.setTotalCompras(rs.getInt("Total_compras"));
+                Cliente newclCliente = new Cliente();
+                newclCliente.setClientID(rs.getInt("Id_Cliente"));
+                newclCliente.setCedula(rs.getInt("Cedula"));
+                newclCliente.setNombre(rs.getString("Nombre"));
+                newclCliente.setApellido(rs.getString("Apellido"));
+                newclCliente.setNivle(rs.getInt("Nivel"));
+                newclCliente.setTotalCompras(rs.getInt("Total_compras"));
 
-                clientesListas.add(newclClienteJc);
+                clientesListas.add(newclCliente);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -102,8 +107,8 @@ public class ClienteDao {
         return clientesListas;
     }
 
-    public ClienteJc getClienteById(int ClienteId) {
-        ClienteJc newclClienteJc = new ClienteJc();
+    public Cliente getClienteById(int ClienteId) {
+        Cliente newclCliente = new Cliente();
         try {
             PreparedStatement preparedStatement = connection.
                     prepareStatement("select * from ClienteBD where Id_Cliente=?");
@@ -111,17 +116,17 @@ public class ClienteDao {
             ResultSet rs = preparedStatement.executeQuery();
 
             if (rs.next()) {
-                newclClienteJc.setClientID(rs.getInt("Id_Cliente"));
-                newclClienteJc.setCedula(rs.getInt("Cedula"));
-                newclClienteJc.setNombre(rs.getString("Nombre"));
-                newclClienteJc.setApellido(rs.getString("Apellido"));
-                newclClienteJc.setNivle(rs.getInt("Nivel"));
-                newclClienteJc.setTotalCompras(rs.getInt("Total_compras"));
+                newclCliente.setClientID(rs.getInt("Id_Cliente"));
+                newclCliente.setCedula(rs.getInt("Cedula"));
+                newclCliente.setNombre(rs.getString("Nombre"));
+                newclCliente.setApellido(rs.getString("Apellido"));
+                newclCliente.setNivle(rs.getInt("Nivel"));
+                newclCliente.setTotalCompras(rs.getInt("Total_compras"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return newclClienteJc;
+        return newclCliente;
     }
 }

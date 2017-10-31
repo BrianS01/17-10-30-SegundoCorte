@@ -5,8 +5,8 @@
  */
 package DAO;
 
-import Dato.ClienteJc;
-import Dato.CotizacionJc;
+import modelo.Cliente;
+import modelo.Cotizacion;
 import Servicios.DbUtil;
 import java.sql.Connection;
 import java.sql.Date;
@@ -21,21 +21,22 @@ import java.util.List;
  *
  * @author Juan Albarracin
  */
-public class CotizacionDao {
+public class CotizacionDAO
+{
       private Connection connection;
 
     public CotizacionDao() {
         connection = DbUtil.getConnection();
     }
 
-    public void addCotizacion(CotizacionJc newCotizacionJc) {
+    public void addCotizacion(Cotizacion newCotizacion) {
         try {
             /// sentencia para insertar en la tabla
             PreparedStatement preparedStatement = connection
                     .prepareStatement("insert into CotizacionBD(Fecha,Id_ClienteFK) values (?,?)");
             // parametros de inicio para agregar...
-            preparedStatement.setDate(1, (Date) newCotizacionJc.getFechaCotizacion());
-            preparedStatement.setInt(2, newCotizacionJc.getIdFKCliente());
+            preparedStatement.setDate(1, (Date) newCotizacion.getFechaCotizacion());
+            preparedStatement.setInt(2, newCotizacion.getIdFKCliente());
           
             preparedStatement.executeUpdate();
 
@@ -58,14 +59,14 @@ public class CotizacionDao {
         }
     }
 
-    public void updateCliente(CotizacionJc newCotizacionJc, int cs) {
+    public void updateCliente(Cotizacion newCotizacion, int cs) {
         try {
             /// sentencia para insertar en la tabla
             PreparedStatement preparedStatement = connection
                     .prepareStatement("update CotizacionBD set Fecha=?, Id_ClienteFK=?" + cs);
             // parametros de inicio para actualizar...
-            preparedStatement.setDate(1, (Date) newCotizacionJc.getFechaCotizacion());
-            preparedStatement.setInt(2, newCotizacionJc.getIdFKCliente());
+            preparedStatement.setDate(1, (Date) newCotizacion.getFechaCotizacion());
+            preparedStatement.setInt(2, newCotizacion.getIdFKCliente());
             
             preparedStatement.executeUpdate();
 
@@ -74,21 +75,21 @@ public class CotizacionDao {
         }
     }
 
-    public List<CotizacionJc> getAllCotizaciones() {
-        List<CotizacionJc> cotizacionListas = new ArrayList<CotizacionJc>();
+    public List<Cotizacion> getAllCotizaciones() {
+        List<Cotizacion> cotizacionListas = new ArrayList<Cotizacion>();
         try {
             System.out.println("LLegue hasta aca");
             Statement statement = connection.createStatement();
 
             ResultSet rs = statement.executeQuery("select * from CotizacionBD");
             while (rs.next()) {
-                CotizacionJc newCotizacionJc = new CotizacionJc();
-                newCotizacionJc.setOtizacionProductoID(rs.getInt("Id_Cotización"));
-                newCotizacionJc.setFechaCotizacion(rs.getDate("Fecha"));
-                newCotizacionJc.setIdFKCliente(rs.getInt("Id_ClienteFK"));
+                Cotizacion newCotizacion = new Cotizacion();
+                newCotizacion.setOtizacionProductoID(rs.getInt("Id_Cotización"));
+                newCotizacion.setFechaCotizacion(rs.getDate("Fecha"));
+                newCotizacion.setIdFKCliente(rs.getInt("Id_ClienteFK"));
                
 
-                cotizacionListas.add(newCotizacionJc);
+                cotizacionListas.add(newCotizacion);
             }
         } catch (SQLException e) {
             e.printStackTrace();

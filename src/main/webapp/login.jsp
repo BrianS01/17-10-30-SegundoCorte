@@ -39,8 +39,8 @@
                 <button type="submit">INGRESAR</button>
                 <br/>
                 <a href="#">
-                    <p class="small">Olvido su contraseña</p>
-                    <p class="small">Contacte al administrador del servicio</p>
+                    <p class="small">Olvido su Contraseña</p>
+                    <p class="small">Contacte al Administrador del Servicio</p>
                 </a>
             </div>
         </div>

@@ -10,20 +10,17 @@
 
 package modelo;
 
-/**
- *
- * @author Mario-Bx
- */
-public class PersonaJc {
-
+public class Persona
+{
     private int cedula;
     private String nombre;
     private String Apellido;
 
-    public PersonaJc() {
-    }
+    public Persona()
+    {}
 
-    public PersonaJc(int cedula, String nombre, String Apellido) {
+    public Persona(int cedula, String nombre, String Apellido)
+    {
         this.cedula = cedula;
         this.nombre = nombre;
         this.Apellido = Apellido;
@@ -54,8 +51,8 @@ public class PersonaJc {
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "PersonaJc{" + "cedula=" + cedula + ", nombre=" + nombre + ", Apellido=" + Apellido + '}';
     }
-
 }

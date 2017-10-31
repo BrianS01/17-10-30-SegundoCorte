@@ -12,11 +12,8 @@ package modelo;
 
 import java.util.*;
 
-/**
- *
- * @author Mario-Bx
- */
-public class CotizacionJc extends MedidasJc {
+public class Cotizacion extends MedidasJc
+{
 
     private int iDCotizacion;
     private int numeroCotizacion;
@@ -25,10 +22,10 @@ public class CotizacionJc extends MedidasJc {
     private int idFKCliente;
     ArrayList<ProductoJc> listaProductos = new ArrayList<ProductoJc>();
 
-    public CotizacionJc() {
-    }
+    public Cotizacion()
+    {}
 
-    public CotizacionJc(int otizacionProductoID, int cotizacionN, Date fechaCotizacion, int precioCotizacion, int idFKCliente, int Ancho, int Alto, int Grosor, int Cantidad) {
+    public Cotizacion(int otizacionProductoID, int cotizacionN, Date fechaCotizacion, int precioCotizacion, int idFKCliente, int Ancho, int Alto, int Grosor, int Cantidad) {
         super(Ancho, Alto, Grosor, Cantidad);
         this.iDCotizacion = otizacionProductoID;
         this.numeroCotizacion = cotizacionN;
@@ -77,11 +74,11 @@ public class CotizacionJc extends MedidasJc {
         this.idFKCliente = idFKCliente;
     }
 
-    public ArrayList<ProductoJc> getListaProductos() {
+    public ArrayList<Producto> getListaProductos() {
         return listaProductos;
     }
 
-    public void setListaProductos(ArrayList<ProductoJc> listaProductos) {
+    public void setListaProductos(ArrayList<Producto> listaProductos) {
         this.listaProductos = listaProductos;
     }
 

@@ -10,8 +10,8 @@
 
 package Controlador;
 
-import dao.ClienteDao;
-import Dato.ClienteJc;
+import dao.ClienteDAO;
+import modelo.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -24,17 +24,17 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Mario-Bx
  */
-public class ClienteClontroller extends HttpServlet
+public class ClienteControlador extends HttpServlet
 {
 
     private static final long serialVersionUID = 1L;
     private static String INSERT_OR_EDIT = "/Cliente.jsp";
     private static String LIST_USER = "/ClienteLista.jsp";
-    private ClienteDao dao;
+    private ClienteDAO dao;
 
-    public ClienteClontroller() {
+    public ClienteControlador() {
         super();
-        dao = new ClienteDao();
+        dao = new ClienteDAO();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

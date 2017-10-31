@@ -1,8 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *  PROYECTO SEGUNDO CORTE
+ *   co-Author :::   Juan Albarracin
+ *   co-Author :::  Mario Bolaños
+ *   co-Author ::: Sergio Orozco
+ *   co-Author :::  Brian Sterling
+ *     Program ::: Bases de Datos
+ *  Credential ::: SIST0008-G01:SIV
  */
+
 package DAO;
 
 import modelo.Cliente;
@@ -15,10 +20,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Mario-Bx
- */
 public class ClienteDAO
 {
 
@@ -82,7 +83,8 @@ public class ClienteDAO
         }
     }
 
-    public List<Client> getAllClientes() {
+    public List<Cliente> getAllClientes()
+    {
         List<Cliente> clientesListas = new ArrayList<Cliente>();
         try {
             System.out.println("LLegue hasta aca");

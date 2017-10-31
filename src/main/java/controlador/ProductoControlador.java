@@ -10,8 +10,8 @@
 
 package Controlador;
 
-import dao.ProductoDao;
-import Dato.ProductoJc;
+import dao.ProductoDAO;
+import modelo.Producto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -24,16 +24,16 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Mario-Bx
  */
-public class ProductoController extends HttpServlet {
+public class ProductoControlador extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private static String INSERT_OR_EDIT = "/Producto.jsp";
     private static String LIST_USER = "/ProductoLista.jsp";
-   private ProductoDao dao;
+   private ProductoDAO dao;
 
-    public ProductoController() {
+    public ProductoControlador() {
         super();
-        dao = new ProductoDao();
+        dao = new ProductoDAO();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -65,7 +65,7 @@ public class ProductoController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductoJc newCliente = new ProductoJc();
+        Producto newCliente = new Producto();
         newCliente.setIdProducto(Integer.parseInt(request.getParameter("cedulaHtml")));
          newCliente.setAlto(Integer.parseInt(request.getParameter("altoHtml")));
        

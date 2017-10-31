@@ -1,11 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *  PROYECTO SEGUNDO CORTE
+ *   co-Author :::   Juan Albarracin
+ *   co-Author :::  Mario Bolaños
+ *   co-Author ::: Sergio Orozco
+ *   co-Author :::  Brian Sterling
+ *     Program ::: Bases de Datos
+ *  Credential ::: SIST0008-G01:SIV
  */
+
 package DAO;
 
-import modelo.Cliente;
 import modelo.Cotizacion;
 import Servicios.DbUtil;
 import java.sql.Connection;
@@ -17,15 +21,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Juan Albarracin
- */
 public class CotizacionDAO
 {
       private Connection connection;
 
-    public CotizacionDao() {
+    public CotizacionDAO() {
         connection = DbUtil.getConnection();
     }
 
@@ -94,10 +94,6 @@ public class CotizacionDAO
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return cotizacionListas;
     }
-
-    
-
 }

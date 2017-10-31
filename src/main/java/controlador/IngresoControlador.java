@@ -11,7 +11,7 @@
 package Controlador;
 
 import dao.IngresoDAO;
-import Dato.Usuario;
+import modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Juan Albarracin
  */
-public class ControladorIngreso extends HttpServlet {
+public class IngresoControlador extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

@@ -10,8 +10,8 @@
 
 package Controlador;
 
-import DAO.CotizacionDao;
-import Dato.CotizacionJc;
+import dao.CotizacionDAO;
+import modelo.Cotizacion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
@@ -26,17 +26,17 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Juan Albarracin
  */
-public class CotizacionController extends HttpServlet {
+public class CotizacionControlador extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private static String INSERT_OR_EDIT = "/Cotizacion.jsp";
     private static String LIST_USER = "/CotizacionLista.jsp";
-    private CotizacionDao dao;
+    private CotizacionDAO dao;
     
 
-    public CotizacionController() {
+    public CotizacionControlador() {
         super();
-        dao = new CotizacionDao();
+        dao = new CotizacionDAO();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -68,7 +68,7 @@ public class CotizacionController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        CotizacionJc newCliente = new CotizacionJc();
+        Cotizacion newCliente = new Cotizacion();
         
        // newCliente.setFechaCotizacion(.parseInt(request.getParameter("cedulaHtml")));
         newCliente.setIdFKCliente(Integer.parseInt((request.getParameter("nombreHtml"))));

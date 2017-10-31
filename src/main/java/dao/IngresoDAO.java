@@ -8,7 +8,7 @@
  *  Credential ::: SIST0008-G01:SIV
  */
 
-package DAO;
+package dao;
 
 import modelo.Usuario;
 import Servicios.DbUtil;

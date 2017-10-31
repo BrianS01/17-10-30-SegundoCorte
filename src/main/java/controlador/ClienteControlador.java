@@ -52,7 +52,7 @@ public class ClienteControlador extends HttpServlet
         } else if (action.equalsIgnoreCase("edit")) {
             forward = INSERT_OR_EDIT;
             int clienteID = Integer.parseInt(request.getParameter("ClienteID"));
-            ClienteJc newCliente = dao.getClienteById(clienteID);
+            Cliente newCliente = dao.getClienteById(clienteID);
             request.setAttribute("Cliente", newCliente);
         } else if (action.equalsIgnoreCase("ListarClientesAC")) {
             forward = LIST_USER;
@@ -66,7 +66,7 @@ public class ClienteControlador extends HttpServlet
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ClienteJc newCliente = new ClienteJc();
+        Cliente newCliente = new Cliente();
         newCliente.setCedula(Integer.parseInt(request.getParameter("cedulaHtml")));
         newCliente.setNombre(request.getParameter("nombreHtml"));
         newCliente.setApellido(request.getParameter("ApellidoHtml"));

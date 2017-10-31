@@ -1,32 +1,24 @@
 /*
- *  PROYECTO SEGUNDO CORTE
- *   co-Author :::   Juan Albarracin
- *   co-Author :::  Mario Bolaños
- *   co-Author ::: Sergio Orozco
- *   co-Author :::  Brian Sterling
- *     Program ::: Bases de Datos
- *  Credential ::: SIST0008-G01:SIV
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-
-package connection;
+package conexion;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Conexion", urlPatterns = {"/Conexion"})
-public class Conexion extends HttpServlet
+@WebServlet(name = "Connection", urlPatterns = {"/Connection"})
+public class Connection extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
     /**
@@ -48,7 +40,7 @@ public class Conexion extends HttpServlet
         try (PrintWriter out = response.getWriter())
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sesion", "root", "root");
+            java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sesion", "root", "root");
             PreparedStatement pst = conn.prepareStatement("Select user,pass from login where nombre=? and clave=?");
             pst.setString(1, user);
             pst.setString(2, pass);

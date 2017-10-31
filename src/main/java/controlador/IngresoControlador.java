@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import DAO.IngresoDAO;
+import dao.IngresoDAO;
 import Dato.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;

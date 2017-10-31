@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import DAO.ProductoDao;
+import dao.ProductoDao;
 import Dato.ProductoJc;
 import java.io.IOException;
 import java.io.PrintWriter;

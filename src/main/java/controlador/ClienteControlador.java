@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import DAO.ClienteDao;
+import dao.ClienteDao;
 import Dato.ClienteJc;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Mario-Bx
  */
-public class ClienteClontroller extends HttpServlet {
+public class ClienteClontroller extends HttpServlet
+{
 
     private static final long serialVersionUID = 1L;
     private static String INSERT_OR_EDIT = "/Cliente.jsp";

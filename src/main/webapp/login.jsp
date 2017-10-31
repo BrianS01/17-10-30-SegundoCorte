@@ -15,6 +15,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="shortcut icon" href="images/VLCicono.ico">
         <link rel="stylesheet"  href="estructura.css" type="text/css" media="screen">
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
         <title>VLC Ltda!</title>
     </head>
     <body>

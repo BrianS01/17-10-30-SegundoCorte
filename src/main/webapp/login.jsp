@@ -12,18 +12,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Daily UI - Day 1 Sign In</title>
-
-        <!-- Google Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-
+        <link rel="stylesheet" href="loginStyle.css">
         <link rel="stylesheet" href="loginAnimate.css">
-        <!-- Custom Stylesheet -->
-        <link rel="stylesheet" href="styl.css">
-
+        <link rel="shortcut icon" href="images/VLCicono.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+        <title>VLC - Ingreso</title>
     </head>
-
     <body>
         <div class="container">
             <div class="top">

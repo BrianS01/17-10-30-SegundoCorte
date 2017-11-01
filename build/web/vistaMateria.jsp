@@ -25,6 +25,7 @@
                 <li><a href='#'><span>Products</span></a></li>
                 <li><a href='#'><span>Company</span></a></li>
                 <li class='last'><a href='#'><span>Contact</span></a></li>
+                <li class='active'><a href='index.html'><span>Salir</span></a></li>
             </ul>
         </div>
     </body>

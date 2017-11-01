@@ -27,6 +27,7 @@
                 <li><a href='vistaEmpleado.jsp'><span>Empleados</span></a></li>
                 <li><a href='vistaCotizacion.jsp'><span>Cotizacion</span></a></li>
                 <li class='last'><a href='vistaFactura.jsp'><span>Factura</span></a></li>
+                <li class='active'><a href='index.html'><span>Salir</span></a></li>
             </ul>
         </div>
         <center>

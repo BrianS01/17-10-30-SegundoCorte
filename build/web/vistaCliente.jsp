@@ -23,10 +23,20 @@
         <title>VLC Ltda!</title>
     </head>
     <body>
+        <div id='cssmenu'>
+            <ul>
+                <li class='active'><a href='inicio.jsp'><span>Inicio</span></a></li>
+                <li><a href='vistaCliente.jsp'><span>Clientes</span></a></li>
+                <li><a href='vistaEmpleado.jsp'><span>Empleados</span></a></li>
+                <li><a href='vistaCotizacion.jsp'><span>Cotizacion</span></a></li>
+                <li class='last'><a href='vistaFactura.jsp'><span>Factura</span></a></li>
+                <li class='active'><a href='index.html'><span>Salir</span></a></li>
+            </ul>
+        </div>
         <div class="container">
             <form>
                 <div class="row">
-                    <h4>Account</h4>
+                    <h4>CLIENTES</h4>
                     <div class="input-group input-group-icon">
                         <input type="text" placeholder="Full Name"/>
                         <div class="input-icon"><i class="fa fa-user"></i></div>

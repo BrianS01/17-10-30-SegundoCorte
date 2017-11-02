@@ -39,7 +39,7 @@
 
 
                 <div class="form-style-5">
-                    <a href="ClienteClontroller?action=incertarAc"><input type="submit" value="Add Cliente"/></a>
+                    <a href="ClienteControlador?action=incertarAc"><input type="submit" value="Add Cliente"/></a>
                     <table border=1>
                         <thead>
                             <tr>
@@ -65,10 +65,9 @@
                                 <td><%=cliente.getApellido()%></td>
                                 <td><%=cliente.getNivle()%></td>
                                 <td><%=cliente.getTotalCompras()%></td>
-                                <td><a href="ClienteClontroller?action=edit&ClienteID=<%=cliente.getClientID() %>">Aatualizar</a></td>
-                                <td><a href="ClienteClontroller?action=delete&ClienteID=<%=cliente.getClientID() %>">Eliminar</a></td>
+                                <td><a href="ClienteControlador?action=edit&ClienteID=<%=cliente.getClientID() %>">Aatualizar</a></td>
+                                <td><a href="ClienteControlador?action=delete&ClienteID=<%=cliente.getClientID() %>">Eliminar</a></td>
                             </tr>
-
                             <%
                                     }
 
